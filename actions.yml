@@ -1,0 +1,12 @@
+name: 'setup-z'
+description: 'setup z task runner'
+input:
+  version:
+    description: Version of z
+    default: 'latest'
+runs:
+  using: 'composite'
+  steps:
+    - name: install
+    - run: ${{ github.action_path }}/install.sh ${{ inputs.version }}
+    - shell: bash
